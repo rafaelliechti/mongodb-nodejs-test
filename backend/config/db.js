@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import '../model/userModel.js';
+import '../model/user.js';
 
 export default async function connectDB(database) {
     try {

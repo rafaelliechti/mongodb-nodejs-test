@@ -14,7 +14,7 @@ const App = () => {
 
   return (
       <div>
-        {users.map(u => <h4 key={u._id}>userName : {u.userName}</h4>)}
+        {users.map(u => <h4 key={u._id}>Name : {u.name}</h4>)}
       </div>
   )
 }
