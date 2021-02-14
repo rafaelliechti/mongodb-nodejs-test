@@ -17,3 +17,15 @@ export const getBuildingById = asyncHandler(async (req, res) => {
         throw new Error('building not found')
     }
 })
+
+export const postBuilding = asyncHandler(async (req, res) => {
+    const building = new Building({
+        name: req.body.name,
+        description: req.body.description,
+        count: req.body.count,
+        income: req.body.income,
+        cost: req.body.cost,
+    })
+    await building.save()
+    res.json(building)
+})
