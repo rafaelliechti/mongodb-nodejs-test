@@ -17,3 +17,16 @@ export const getAchievementById = asyncHandler(async (req, res) => {
         throw new Error('achievement not found')
     }
 })
+
+export const postAchievement = asyncHandler(async (req, res) => {
+    const achievement = new Achievement({
+        name: req.body.name,
+        description: req.body.description,
+        type: req.body.type,
+        requirement: req.body.requirement,
+        buildingId: req.body.buildingId,
+        awarded: req.body.awarded,
+    })
+    await achievement.save()
+    res.json(achievement)
+})
