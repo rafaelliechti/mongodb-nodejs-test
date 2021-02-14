@@ -20,20 +20,15 @@ const userSchema = mongoose.Schema({
         required: true,
         default: false
     },
-    buildings: {
-        type: Array,
-        required: false,
-        default: []
-    },
-    upgrades: {
-        type: Array,
-        required: false,
-        default: []
-    },
-    achievements: {
-        type: Array,
-        required: false,
-        default: []
+    saveGame: {
+        score: Number,
+        totalScore: Number,
+        totalClicks: Number,
+        clickValue: Number,
+        version: String,
+        buildings: Array,
+        upgrades: Array,
+        achievements: Array,
     }
 }, {
     timestamps: true
