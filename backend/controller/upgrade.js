@@ -17,3 +17,18 @@ export const getUpgradeById = asyncHandler(async (req, res) => {
         throw new Error('upgrade not found')
     }
 })
+
+export const postUpgrade = asyncHandler(async (req, res) => {
+    const upgrade = new Upgrade({
+        name: req.body.name,
+        description: req.body.description,
+        type: req.body.type,
+        cost: req.body.cost,
+        buildingId: req.body.buildingId,
+        requirement: req.body.requirement,
+        bonus: req.body.bonus,
+        purchased: req.body.purchased,
+    })
+    await upgrade.save()
+    res.json(upgrade)
+})
